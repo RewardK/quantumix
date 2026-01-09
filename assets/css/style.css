@@ -1,29 +1,30 @@
 :root {
-    --bg: #0b0f1a;
+    --bg: #0a0f1f;
+    --bg-alt: #0f172a;
     --surface: #0f172a;
     --surface-light: #111827;
     --card: #ffffff;
     --text: #0f172a;
-    --text-muted: #475569;
-    --text-inverse: #e2e8f0;
-    --accent: #3b82f6;
-    --accent-strong: #2563eb;
-    --accent-soft: #93c5fd;
+    --text-muted: #64748b;
+    --text-inverse: #f8fafc;
+    --accent: #6366f1;
+    --accent-strong: #4f46e5;
+    --accent-soft: #a5b4fc;
     --border: #e2e8f0;
-    --shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+    --shadow: 0 20px 60px rgba(15, 23, 42, 0.18);
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-family: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
 }
 
 body {
-    background: #f8fafc;
+    background: #f1f5f9;
     color: var(--text);
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 img {
@@ -37,13 +38,14 @@ img {
 }
 
 .site-header {
-    background: rgba(11, 15, 26, 0.95);
+    background: rgba(10, 15, 31, 0.9);
     color: var(--text-inverse);
     padding: 18px 0;
     position: sticky;
     top: 0;
     z-index: 10;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
 }
 
 .header-inner {
@@ -57,8 +59,8 @@ img {
     color: var(--accent-soft);
     font-weight: 700;
     text-decoration: none;
-    font-size: 1.4rem;
-    letter-spacing: 0.5px;
+    font-size: 1.5rem;
+    letter-spacing: 0.4px;
 }
 
 .main-nav {
@@ -99,7 +101,7 @@ img {
 .btn,
 .btn-outline {
     padding: 12px 20px;
-    border-radius: 10px;
+    border-radius: 999px;
     border: 1px solid var(--accent);
     text-decoration: none;
     display: inline-flex;
@@ -111,50 +113,62 @@ img {
 }
 
 .btn {
-    background: var(--accent);
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
     color: #ffffff;
     border: none;
-    box-shadow: 0 12px 25px rgba(59, 130, 246, 0.25);
+    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.35);
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    background: var(--accent-strong);
 }
 
 .btn-outline {
-    color: var(--accent);
-    background: transparent;
+    color: var(--accent-soft);
+    border-color: rgba(165, 180, 252, 0.7);
+    background: rgba(99, 102, 241, 0.1);
 }
 
 .btn-outline:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.15);
 }
 
 .hero {
-    background: radial-gradient(circle at top, rgba(59, 130, 246, 0.35), transparent 45%),
-        linear-gradient(135deg, #0b0f1a, #0f172a 60%, #111827 100%);
+    background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.45), transparent 45%),
+        radial-gradient(circle at 80% 0%, rgba(14, 165, 233, 0.2), transparent 45%),
+        linear-gradient(135deg, #0a0f1f, #111827 60%, #0b1220 100%);
     color: var(--text-inverse);
-    padding: 90px 0;
+    padding: 100px 0 90px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='60' cy='60' r='1'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
 }
 
 .hero-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
     line-height: 1.1;
     margin-bottom: 16px;
 }
 
 .hero p {
     font-size: 1.05rem;
-    color: rgba(226, 232, 240, 0.9);
+    color: rgba(226, 232, 240, 0.88);
     margin-bottom: 24px;
 }
 
@@ -167,22 +181,22 @@ img {
 .hero-card {
     background: rgba(15, 23, 42, 0.7);
     padding: 28px;
-    border-radius: 16px;
+    border-radius: 20px;
     border: 1px solid rgba(148, 163, 184, 0.2);
     box-shadow: var(--shadow);
 }
 
 .section {
-    padding: 70px 0;
+    padding: 80px 0;
 }
 
 .section h2 {
-    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
     margin-bottom: 24px;
 }
 
 .section.dark {
-    background: var(--surface);
+    background: var(--bg-alt);
     color: var(--text-inverse);
 }
 
@@ -200,16 +214,16 @@ img {
 
 .card {
     background: var(--card);
-    padding: 26px;
-    border-radius: 16px;
+    padding: 28px;
+    border-radius: 20px;
     box-shadow: var(--shadow);
     border: 1px solid rgba(148, 163, 184, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 24px 55px rgba(15, 23, 42, 0.16);
+    transform: translateY(-6px);
+    box-shadow: 0 30px 70px rgba(15, 23, 42, 0.2);
 }
 
 .card h3 {
@@ -222,9 +236,9 @@ img {
 }
 
 .site-footer {
-    background: #0b0f1a;
+    background: #0a0f1f;
     color: var(--text-inverse);
-    padding: 50px 0 20px;
+    padding: 60px 0 20px;
 }
 
 .footer-grid {
@@ -262,7 +276,7 @@ img {
 
 .page-hero {
     background: linear-gradient(120deg, #e2e8f0, #f8fafc);
-    padding: 50px 0;
+    padding: 60px 0;
     border-bottom: 1px solid var(--border);
 }
 
@@ -276,7 +290,7 @@ img {
     width: 100%;
     padding: 12px 14px;
     margin-bottom: 12px;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid var(--border);
     background: #fff;
 }
@@ -296,7 +310,7 @@ img {
     width: 100%;
     min-height: 320px;
     border: 0;
-    border-radius: 16px;
+    border-radius: 20px;
     box-shadow: var(--shadow);
 }
 
@@ -309,8 +323,8 @@ img {
 
 .tech-logo {
     background: #ffffff;
-    padding: 12px 18px;
-    border-radius: 12px;
+    padding: 12px 20px;
+    border-radius: 14px;
     box-shadow: var(--shadow);
 }
 
@@ -359,7 +373,7 @@ img {
 .filter button {
     margin-top: 12px;
     margin-right: 8px;
-    padding: 8px 14px;
+    padding: 8px 16px;
     border-radius: 999px;
     border: 1px solid var(--border);
     background: #fff;
@@ -385,7 +399,7 @@ img {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background: #0b0f1a;
+        background: #0a0f1f;
         color: var(--text-inverse);
     }
 
