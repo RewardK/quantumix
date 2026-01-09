@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^$ /index.php [L]
+RewriteRule ^service/([a-zA-Z0-9\-]+)/?$ /service.php?slug=$1 [L,QSA]
+RewriteRule ^project/([a-zA-Z0-9\-]+)/?$ /project.php?slug=$1 [L,QSA]
+RewriteRule ^post/([a-zA-Z0-9\-]+)/?$ /post.php?slug=$1 [L,QSA]
