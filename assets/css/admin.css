@@ -1,0 +1,83 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+.admin-header {
+    background: #0b1120;
+    color: #e2e8f0;
+    padding: 16px 24px;
+}
+
+.admin-header nav a {
+    color: #e2e8f0;
+    margin-right: 12px;
+    text-decoration: none;
+}
+
+.admin-main {
+    padding: 24px;
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    border-bottom: 1px solid #cbd5f5;
+    padding: 8px;
+}
+
+.btn {
+    background: #38bdf8;
+    color: #0b1120;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.admin-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0f172a;
+}
+
+.login-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: 12px;
+    width: 340px;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+}
+
+.form input,
+.form textarea,
+.form select,
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.success { color: #10b981; }
+.error { color: #ef4444; }
